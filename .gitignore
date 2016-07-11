@@ -1,0 +1,6 @@
+node_modules
+thumbs.db
+.DS_store
+dist/
+.sublime-gulp.cache
+sublime-gulp.log
