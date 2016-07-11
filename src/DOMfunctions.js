@@ -10,6 +10,8 @@ const images = require("./Heros-images.js");
 const heroImg = images.heroesImages
 
 let populateDom = function(){
+	console.log("heroArray",heroArray );
+	console.log("heroImg",heroImg[0] );
 	for (let i = 0; i < heroArray.length; i ++){
 		counter ++
 		imgCounter ++
@@ -38,11 +40,16 @@ let selectCharacter = function(){
 
 let populateAbility = function(user1) {
 	let currentArray = Weapons.weaponsArray;
-	let container = $("#abilityContainer").removeClass("hidden");
+	let container1 = $("#1HandAbilityContainer").removeClass("hidden");
+	let container2 = $("#2HandAbilityContainer").removeClass("hidden");
 	for (let i =0; i < currentArray.length; i ++){
 		let current = currentArray[i];
 		let button = $("<button>").addClass("abilityButton").html(`${current.name}`);
-		container.append(button);
+		if (current.hands === 1){
+			container1.append(button);
+		} else {
+			container2.append(button);
+		}
 		button.click(function() {
 			selectAbility(user1, currentArray);
 		});

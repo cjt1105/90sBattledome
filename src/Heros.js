@@ -1,6 +1,7 @@
 "use strict";
 
 const heroesImages = require("./Heros-images")
+const heroImg = heroesImages.heroesImages;
 
 ///// NEW HERO CONSTRUCTOR /////
 
@@ -23,16 +24,16 @@ const newHero = function(name,health,skillBonus,initBonus,speedBonus,image) {
 newHero.prototype = new Hero();
 
 ///// NEW HERO CONSTRUCTOR /////
-let image1 = heroesImages[0];
-let image2 = heroesImages[1];
-let image3 = heroesImages[2];
-let image4 = heroesImages[3];
-let image5 = heroesImages[4];
-let image6 = heroesImages[5];
-let image7 = heroesImages[6];
-let image8 = heroesImages[7];
-let image9 = heroesImages[8];
-let image10 = heroesImages[9];
+let image1 = heroImg[0];
+let image2 = heroImg[1];
+let image3 = heroImg[2];
+let image4 = heroImg[3];
+let image5 = heroImg[4];
+let image6 = heroImg[5];
+let image7 = heroImg[6];
+let image8 = heroImg[7];
+let image9 = heroImg[8];
+let image10 = heroImg[9];
 let spongeBob = new newHero("SpongeBob Squarepants",200,25,15,15,image1);
 let patrick = new newHero("Patrick Star",200,25,15,15,image2);
 let doug = new newHero("Doug Funny",200,25,15,15,image3);

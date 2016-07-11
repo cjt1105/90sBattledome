@@ -3,6 +3,8 @@
 let Players = require("./player");
 let enemys = require("./Enemy");
 let spawnedEnemy;
+const images = require("./Heros-images.js");
+const heroImg = images.heroesImages;
 
 
 function randomNumber (x) {
@@ -128,13 +130,15 @@ function spawnEnemy (enemy) {
 }
 
 function addCharacterCards (player, enemy){
+  console.log("player",player );
    $('#playerDiv').html(
      `
     <div class="player-container">
-     <div class="playerName">${player.characterName}</div>
-     <div class="playerHealth">Health: ${player.health}</div>
-     <div class="playerSpeed">Attack: ${player.speed+player.speedBonus}</div>
-     <div class="playerAbility">${player.weapons[0].name}</div>
+      <img src="${player.image}">
+      <div class="playerName">${player.characterName}</div>
+      <div class="playerHealth">Health: ${player.health}</div>
+      <div class="playerSpeed">Attack: ${player.speed+player.speedBonus}</div>
+      <div class="playerAbility">${player.weapons[0].name}</div>
     </div>
      `
      );
@@ -142,10 +146,11 @@ function addCharacterCards (player, enemy){
    $('#enemyDiv').html(
      `
     <div id="enemy-container">
-     <div class="enemyName">${spawnedEnemy.characterName}</div>
-     <div class="enemyHealth">Health: ${spawnedEnemy.health}</div>
-     <div class="enemySpeed">Attack: ${spawnedEnemy.speed + spawnedEnemy.speedBonus}</div>
-     <div class="enemyAbility">${spawnedEnemy.weapons[0].name}</div>
+      <img src="${spawnedEnemy.image}">
+      <div class="enemyName">${spawnedEnemy.characterName}</div>
+      <div class="enemyHealth">Health: ${spawnedEnemy.health}</div>
+      <div class="enemySpeed">Attack: ${spawnedEnemy.speed + spawnedEnemy.speedBonus}</div>
+      <div class="enemyAbility">${spawnedEnemy.weapons[0].name}</div>
     </div>
      `
      );
