@@ -13,8 +13,8 @@ let populateDom = function(){
 	for (let i = 0; i < heroArray.length; i ++){
 		counter ++
 		imgCounter ++
-
-		$('#characterContainer').append(`<div class="playercontainer"id="playercontainer${counter}"><img src="${heroImg[imgCounter]}"><div class="heroname">${heroArray[i].characterName}</div><a class="next">Confirm</a></div>`);
+		console.log("heroArray[i]",heroArray[i].speed );
+		$('#characterContainer').append(`<div class="playercontainer"id="playercontainer${counter}"><div class="heroname">${heroArray[i].characterName}</div><img src="${heroImg[imgCounter]}"><div class="playerHealth">Health: ${heroArray[i].health}</div><div class="playerSpeed">Attack: ${heroArray[i].speed+heroArray[i].speedBonus}</div><a class="next">Confirm</a></div>`);
 	}
 	$('.next').on("click", selectCharacter);
 	$('#charSelectContainer').removeClass('hidden');
